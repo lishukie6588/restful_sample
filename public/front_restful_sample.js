@@ -1,14 +1,14 @@
-let box_width = "80%";
-let box_height = "80vh";
-let status_string;
+const box_width = "80%";
+const box_height = "80vh";
+const status_string;
 
 $(document).ready(function(){
 
 
     console.log("UI loaded");
-    let car_result = createResult();
+    const car_result = createResult();
     car_result.toggle();
-    let car_specifications = createCar();
+    const car_specifications = createCar();
     $(".main_container").append(car_result);
     $(".main_container").append(car_specifications);
 
@@ -18,7 +18,7 @@ $(document).ready(function(){
 
 function createCar() {
  
-    let create_div = $("<div></div>");
+    const create_div = $("<div></div>");
     create_div.css({"font-size": "25%", "background": "rgba(109,189,181,0.5)", "width": box_height, "height": box_height,
                     "position": "absolute", "top": "10vh", "bottom": "10vh"
                 });
@@ -26,7 +26,7 @@ function createCar() {
    
     const center_div = createCenterDiv();
 
-    let title_div = $("<div></div>");
+    const title_div = $("<div></div>");
     title_div.css({"width": "50%", "height": "auto", "height": "auto", 
                      "margin-left": "25%", "margin-bottom": "0%",
                     "text-align": "center"
@@ -36,43 +36,43 @@ function createCar() {
     title_name.append("CAR SPECIFICATIONS:");
     title_div.append(title_name);
   
-    let form_div = createFormDiv();
+    const form_div = createFormDiv();
 
 
     createLabel("types:", form_div);
     const car_types = ["electric", "2 wheels", "sports"];
-    let input_car_type = createSelect(car_types);
+    const input_car_type = createSelect(car_types);
     input_car_type.attr({id: "car_type", name: "car_type", required : "true"});
     form_div.append(input_car_type);
 
     createLabel("turbo:", form_div);
-    let input_car_turbo = createSelect(["yes", "no"]);
+    const input_car_turbo = createSelect(["yes", "no"]);
     input_car_turbo.attr({type: "text", id: "car_turbo", name: "car_turbo",  required : "true"});
     form_div.append(input_car_turbo);
 
     createLabel("fog lights:", form_div);
-    let input_car_fog_lights = createSelect(["yes", "no"]);
+    const input_car_fog_lights = createSelect(["yes", "no"]);
     input_car_fog_lights.attr({type: "text", id: "car_fog_lights", name: "car_fog_lights", required : "true"});
     form_div.append(input_car_fog_lights);
 
     createLabel("heated seats:", form_div);
-    let input_car_heated_seats = createSelect(["yes", "no"]);
+    const input_car_heated_seats = createSelect(["yes", "no"]);
     input_car_heated_seats.attr({type: "text", id: "car_heated_seats", name: "car_heated_seats", required : "true"});
     form_div.append(input_car_heated_seats);
 
     createLabel("autopilot:", form_div);
-    let input_car_autopilot = createSelect(["yes", "no"]);
+    const input_car_autopilot = createSelect(["yes", "no"]);
     input_car_autopilot.attr({type: "text", id: "car_autopilot", name: "car_autopilot",  required : "true"});
     form_div.append(input_car_autopilot);
 
     createLabel("sports exhaust:", form_div);
-    let input_car_sports_exhaust = createSelect(["yes", "no"]);
+    const input_car_sports_exhaust = createSelect(["yes", "no"]);
     input_car_sports_exhaust.attr({type: "text", id: "car_sports_exhaust", name: "mileage", required : "true"});
     form_div.append(input_car_sports_exhaust);
 
 
-    let buttons_div = createButtonsDiv();
-    let create = createButton("GET CAR", "right");
+    const buttons_div = createButtonsDiv();
+    const create = createButton("GET CAR", "right");
     buttons_div.append(create);
     
     create.click(function() {
@@ -114,7 +114,7 @@ function createCar() {
 }
 
 function createResult() {
-    let login_div = $("<div></div>");
+    const login_div = $("<div></div>");
     login_div.css({"font-size": "25%", "background": "rgba(109,189,181,0.5)", "width": box_width, "height": box_height,
                     "position": "absolute", "top": "10vh", "bottom": "10vh", "left": "10%", "right": "10%"
                 });
@@ -125,13 +125,13 @@ function createResult() {
     const title_div = $("<div></div>");
     title_div.css({"background": "", "width": "100%", "height": "auto", "font-size": "500%", "margin-top": "0%", "margin-bottom": "0%", "font-weight": "bold", "text-align": "center"});
     title_div.append("RETURNED CAR");
-    let json_results_div = $("<div></div>");
+    const json_results_div = $("<div></div>");
     json_results_div.css({"background": "", "width": "80%", "height": "50%", "font-size": "600%", "margin-top": "0%", "margin-bottom": "0%", "word-wrap": "break-word"});
     json_results_div.attr("id", "json_results");
 
 
-    let buttons_div = createButtonsDiv();
-    let login = createButton("CREATE ANOTHER CAR", "right");
+    const buttons_div = createButtonsDiv();
+    const login = createButton("CREATE ANOTHER CAR", "right");
     buttons_div.append(login);
 
 
