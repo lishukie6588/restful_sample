@@ -1,0 +1,177 @@
+.main_container { /* div for all non nav bar content*/
+
+    width: 100%; 
+    margin: auto;
+}
+
+.nav_container { /* div for all non nav bar content*/
+
+    width: 100%; 
+    margin: auto;
+}
+
+.one_percent_margin {
+    margin: 1%;
+}
+
+#main_div { /* div for entire screen */
+
+    width:85%;
+    height:98vh;
+}
+
+* {
+
+    padding: 2px;
+    border-radius: 5px;
+    margin: auto;
+    overflow: auto;
+    opacity: 98%;
+    font-family: arial;
+
+}
+
+body {
+
+    /* background-color: grey; */
+    background-image: url('/static/pictures/forest.jpg');
+    background-attachment: fixed;
+}
+
+@media only screen and (max-width: 800px) {
+    #news_section {
+        width: 100%;
+        height: 50%;
+    }
+    #todo_section {
+        width: 100%;
+        height: 50%;
+    }
+
+    #stock_data {
+        width: 100%;
+        height: 50%;
+    }
+    #stock_news {
+        width: 100%;
+        height: 50%;
+    }
+
+    #symbol_price_div {
+        width: 100%;
+        height: 25%;
+    }
+
+    #summary_data_div {
+        width: 100%;
+        height: 75%;
+    }
+
+    #stocks_list_div {
+        font-size: 65%;
+    }
+
+    .nav_container {
+        font-size: 50%;
+    }
+
+    #sort_bar {
+        font-size: 50%;
+    }
+
+    .net_worth_button {
+        font-size: 50%;
+    }
+
+    .main_container {
+        height: 95%;
+    }
+
+    .nav_container {
+        font-size: 10%;
+        height: 5%;
+    }
+
+    .nav_button {
+        font-size: 500%;
+    }
+
+    .title_div {
+        font-size: 100%;
+    }
+
+    .day_button {
+        font-size: 65%;
+        line-height: 200%;
+    }
+
+    .stock_search_button {
+        font-size: 65%;
+        line-height: 300%;
+    }
+
+}
+
+@media only screen and (min-width: 801px) {
+    #news_section {
+        width: 50%;
+        height: 100%;
+        float: left;
+    }
+    #todo_section {
+        width: 50%;
+        height: 100%;
+        float: left;
+    }
+
+    #stock_data {
+        width: 50%;
+        height: 100%;
+        float: left;
+    }
+    #stock_news {
+        width: 50%;
+        height: 100%;
+        float: left;
+    }
+
+    #symbol_price_div {
+        width: 100%;
+        height: 25%;
+    }
+
+    #summary_data_div {
+        width: 100%;
+        height: 75%;
+    }
+
+    .nav_button {
+        font-size: 65%;
+    }
+
+    .main_container {
+        height: 97%;
+    }
+
+    .nav_container {
+        height: 3%;
+    }
+
+    .title_div {
+        font-size: 200%;
+    }
+
+    .day_button {
+        font-size: 100%;
+        line-height: 300%;
+    }
+
+    .stock_search_button {
+        font-size: 100%;
+        line-height: 220%;
+    }
+
+
+}
+
+
