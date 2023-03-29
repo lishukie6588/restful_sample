@@ -6,8 +6,8 @@ module.exports = function(){
 
         console.log("get request to /");
         const context = {};
-        context.jsscripts = ["./helper.js", "./restful/restful_sample.js"];
-        res.render('login', context);
+        context.jsscripts = ["./helper.js", "./front_restful_sample.js"];
+        res.render('restful_sample', context);
     
     });
 

@@ -13,7 +13,7 @@ app.use('/static', express.static('public'));
 app.set('view engine', 'handlebars');
 app.set('port', 8800);
 
-app.use('/', require('./restful_sample.js'));
+app.use('/', require('./back_restful_sample.js'));
 
 app.use(function(req,res){
   res.status(404);
