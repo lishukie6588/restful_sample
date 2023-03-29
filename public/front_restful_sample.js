@@ -1,6 +1,5 @@
 const box_width = "80%";
 const box_height = "80vh";
-const status_string;
 
 $(document).ready(function(){
 

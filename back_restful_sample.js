@@ -1,3 +1,5 @@
+const { auto } = require('async');
+
 module.exports = function(){
     var express = require('express');
     var router = express.Router();
@@ -13,12 +15,29 @@ module.exports = function(){
 
     router.get('/get_car', function(req, res){
 
-        const car_specifications = {type : req.query.car_type, turbo: req.query.car_turbo, fog_lights: req.query.car_fog_lights, heated_seats: req.query.car_heated_seats, autopilot: req.query.car_autopilot, sports_exhaust: req.query.car_sports_exhaust};
-        const car = {car_object : car_specifications}
-        const returned_car_json = JSON.stringify(car);
+        class Car {
 
-        res.send(returned_car_json);
-    
+            constructor(type, turbo, fog_lights, heated_seats, autopilot, sports_exhaust){
+                this.type = type;
+                this.turbo = turbo;
+                this.fog_lights = fog_lights; 
+                this.heated_seats = heated_seats;
+                this.autopilot = autopilot;
+                this.sports_exhaust = sports_exhaust;
+            }
+        
+        }
+
+        const return_car = new Car(req.query.car_type, 
+                                    req.query.car_turbo,
+                                    req.query.car_fog_lights,
+                                    req.query.car_heated_seats,
+                                    req.query.car_autopilot,
+                                    req.query.car_sports_exhaust);
+
+        const returned_car_json = JSON.stringify(return_car);
+        res.send(returned_car_json);    
+
     });
 
     return router;

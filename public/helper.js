@@ -1,9 +1,9 @@
-// let background_dark_yellow = "rgba(196, 196, 61, 95)";
+// const background_dark_yellow = "rgba(196, 196, 61, 95)";
 
 
 function createDiv(width, height, float, id) {
 
-    let div = $("<div></div");
+    const div = $("<div></div");
     div.css({"width": width, "height": height, "float": float});
     div.attr("id", id);
     return div;
@@ -28,7 +28,7 @@ function openAnimate(element_selector, element_width_num, element_height_num) {
 
 function createInputDiv () {
 
-    let input = $("<input/>");
+    const input = $("<input/>");
     input.css({"background": "rgba(109,189,181,0.75)", "border": "0p%",
     "text-align": "center", "margin-left": "25%", "margin-top": "0.5%", "margin-bottom": "0.5%",
     "width": "50%", "height": "auto", "border": "none"         
@@ -39,7 +39,7 @@ function createInputDiv () {
 }
 
 function createFormDiv() {
-    let form_div = $("<div></div>");
+    const form_div = $("<div></div>");
     form_div.css({"background": "", "width": "100%", "height": "auto", "font-size": "500%", "margin-top": "0%", "margin-bottom": "0%"});
     return form_div;
 
@@ -47,7 +47,7 @@ function createFormDiv() {
 
 function createButtonsDiv() {
 
-    let buttons_div = $("<div></div>");
+    const buttons_div = $("<div></div>");
     buttons_div.css({"background": "", "width": "50%", "height": "10%", "font-size": "250%", "margin-top": "0.5%", "margin-bottom": "0.5%"});
     return buttons_div;
 }
@@ -55,7 +55,7 @@ function createButtonsDiv() {
 
 function createButton(label, float) {
 
-    let button = $("<div></div>");
+    const button = $("<div></div>");
     button.css({"position": "relative", "width": "auto", "height": "auto", "background": "rgba(214, 192, 133, 0.7)", "float": float});
     button.append("<b>" + label + "</b>");
     addHover(button, {"background": "rgba(214, 192, 133, 1)"}, {"background": button.css("background")});
@@ -65,33 +65,33 @@ function createButton(label, float) {
 
 function createCenterDiv() {
 
-    let center_div = $("<div></div>");
+    const center_div = $("<div></div>");
     center_div.css({"background": "", "width": "100%", "height": "72%",
                     "position": "absolute", "top": "28%", "bottom": "0%", "left": "0%"
                 });
     return center_div;
 }
 
-function getDateString(year, month, date) {
-    let return_string = year + "-";
-    let month_string;
-    let date_string;
-    if (month < 10) {
-        month_string = "0" + month + "-";
-    }
-    else {
-        month_string = month + "-";
-    }
-    if (date < 10) {
-        date_string = "0" + date;
-    }
-    else {
-        date_string = date;
-    }
-    return_string += month_string;
-    return_string += date_string;
-    return return_string;
-}
+// function getDateString(year, month, date) {
+//     const return_string = year + "-";
+//     const month_string;
+//     const date_string;
+//     if (month < 10) {
+//         month_string = "0" + month + "-";
+//     }
+//     else {
+//         month_string = month + "-";
+//     }
+//     if (date < 10) {
+//         date_string = "0" + date;
+//     }
+//     else {
+//         date_string = date;
+//     }
+//     return_string += month_string;
+//     return_string += date_string;
+//     return return_string;
+// }
 
 
 function createLabel(label, parent) {
@@ -102,12 +102,11 @@ function createLabel(label, parent) {
    label_car_type.html(label);
    parent.append(label_car_type);
 
-
 }
 
 function createInputDiv () {
 
-   let input = $("<input/>");
+   const input = $("<input/>");
    input.css({"background": "rgba(109,189,181,0.75)", "border": "0p%",
    "text-align": "right", "margin-left": "25%", "margin-top": "0.5%", "margin-bottom": "0.5%",
    "width": "25%", "height": "auto", "border": "none"         
@@ -119,7 +118,7 @@ function createInputDiv () {
 
 function createSelect (selections) {
 
-   let select = $("<select/>");
+   const select = $("<select/>");
    select.css({"background": "rgba(109,189,181,0.75)", "border": "0p%",
    "text-align": "center", "margin-left": "10%", "margin-top": "0.5%", "margin-bottom": "0.5%",
    "width": "80%", "height": "auto", "border": "none"         
@@ -134,7 +133,7 @@ function createSelect (selections) {
 }
 
 function createFormDiv() {
-   let form_div = $("<div></div>");
+   const form_div = $("<div></div>");
    form_div.css({"background": "", "width": "100%", "height": "auto", "font-size": "500%", "margin-top": "0%", "margin-bottom": "0%"});
    return form_div;
 
@@ -142,7 +141,7 @@ function createFormDiv() {
 
 function createButtonsDiv() {
 
-   let buttons_div = $("<div></div>");
+   const buttons_div = $("<div></div>");
    buttons_div.css({"background": "", "width": "50%", "height": "15%", "font-size": "200%", "margin-top": "0.5%", "margin-bottom": "0.5%"});
    return buttons_div;
 }
@@ -150,7 +149,7 @@ function createButtonsDiv() {
 
 function createButton(label, float) {
 
-   let button = $("<div></div>");
+   const button = $("<div></div>");
    button.css({"position": "relative", "width": "100%", "height": "100%", "background": "rgba(214, 192, 133, 0.7)", "float": float, "font-size": "30px", "text-align": "center"});
    button.append("<b>" + label + "</b>");
    addHover(button, {"background": "rgba(214, 192, 133, 1)"}, {"background": button.css("background")});
@@ -160,7 +159,7 @@ function createButton(label, float) {
 
 function createCenterDiv() {
 
-   let center_div = $("<div></div>");
+   const center_div = $("<div></div>");
    center_div.css({"background": "", "width": "100%", "height": "72%",
                    "position": "absolute", "top": "28%", "bottom": "0%", "left": "0%"
                });
@@ -169,7 +168,7 @@ function createCenterDiv() {
 
 
 function createResult() {
-   let login_div = $("<div></div>");
+   const login_div = $("<div></div>");
    login_div.css({"font-size": "25%", "background": "rgba(109,189,181,0.5)", "width": box_width, "height": box_height,
                    "position": "absolute", "top": "10vh", "bottom": "10vh", "left": "10%", "right": "10%"
                });
@@ -180,13 +179,13 @@ function createResult() {
    const title_div = $("<div></div>");
    title_div.css({"background": "", "width": "100%", "height": "auto", "font-size": "500%", "margin-top": "0%", "margin-bottom": "0%", "font-weight": "bold", "text-align": "center"});
    title_div.append("RETURNED CAR");
-   let json_results_div = $("<div></div>");
+   const json_results_div = $("<div></div>");
    json_results_div.css({"background": "", "width": "80%", "height": "50%", "font-size": "600%", "margin-top": "0%", "margin-bottom": "0%", "word-wrap": "break-word"});
    json_results_div.attr("id", "json_results");
 
 
-   let buttons_div = createButtonsDiv();
-   let login = createButton("CREATE ANOTHER CAR", "right");
+   const buttons_div = createButtonsDiv();
+   const login = createButton("CREATE ANOTHER CAR", "right");
    buttons_div.append(login);
 
 
@@ -228,7 +227,7 @@ function createLabel(label, parent) {
 
 function createInputDiv () {
 
-   let input = $("<input/>");
+   const input = $("<input/>");
    input.css({"background": "rgba(109,189,181,0.75)", "border": "0p%",
    "text-align": "right", "margin-left": "25%", "margin-top": "0.5%", "margin-bottom": "0.5%",
    "width": "25%", "height": "auto", "border": "none"         
@@ -240,7 +239,7 @@ function createInputDiv () {
 
 function createSelect (selections) {
 
-   let select = $("<select/>");
+   const select = $("<select/>");
    select.css({"background": "rgba(109,189,181,0.75)", "border": "0p%",
    "text-align": "center", "margin-left": "10%", "margin-top": "0.5%", "margin-bottom": "0.5%",
    "width": "80%", "height": "auto", "border": "none"         
@@ -255,7 +254,7 @@ function createSelect (selections) {
 }
 
 function createFormDiv() {
-   let form_div = $("<div></div>");
+   const form_div = $("<div></div>");
    form_div.css({"background": "", "width": "100%", "height": "auto", "font-size": "500%", "margin-top": "0%", "margin-bottom": "0%"});
    return form_div;
 
@@ -263,7 +262,7 @@ function createFormDiv() {
 
 function createButtonsDiv() {
 
-   let buttons_div = $("<div></div>");
+   const buttons_div = $("<div></div>");
    buttons_div.css({"background": "", "width": "50%", "height": "10%", "font-size": "250%", "margin-top": "0.5%", "margin-bottom": "0.5%"});
    return buttons_div;
 }
@@ -271,7 +270,7 @@ function createButtonsDiv() {
 
 function createButton(label, float) {
 
-   let button = $("<div></div>");
+   const button = $("<div></div>");
    button.css({"position": "relative", "width": "100%", "height": "100%", "background": "rgba(214, 192, 133, 0.7)", "float": float, "font-size": "30px", "text-align": "center"});
    button.append("<b>" + label + "</b>");
    addHover(button, {"background": "rgba(214, 192, 133, 1)"}, {"background": button.css("background")});
@@ -281,7 +280,7 @@ function createButton(label, float) {
 
 function createCenterDiv() {
 
-   let center_div = $("<div></div>");
+   const center_div = $("<div></div>");
    center_div.css({"background": "", "width": "100%", "height": "72%",
                    "position": "absolute", "top": "28%", "bottom": "0%", "left": "0%"
                });
