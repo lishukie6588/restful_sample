@@ -5,13 +5,12 @@ let status_string;
 $(document).ready(function(){
 
 
-    console.log("reached load");
+    console.log("UI loaded");
     let car_result = createResult();
     car_result.toggle();
-    //create_account_div.toggle();
-    let create_car_div = createCar();
+    let car_specifications = createCar();
     $(".main_container").append(car_result);
-    $(".main_container").append(create_car_div);
+    $(".main_container").append(car_specifications);
 
 
 
@@ -35,17 +34,10 @@ function createCar() {
     title_name = $("<div></div>");
     title_name.css({"width": "100%", "height": "auto", "text-align": "center", "font-size": "700%", "font-style": "italic", "font-family": "Arial"}); 
     title_name.append("CAR SPECIFICATIONS:");
-    //slogan = $("<div></div>");
-    //slogan.css({"width": "100%", "height": "auto", "text-align": "center", "font-size": "500%", "font-family": "Arial", "font-style": "italic"});
-    //slogan.append("Any time, any where");
     title_div.append(title_name);
-    //title_div.append(slogan);
-
+  
     let form_div = createFormDiv();
 
-    // let input_car_type = createInputDiv();
-    // input_car_type.attr({type: "text", id: "car_type", name: "car_type", placeholder: "car type", required : "true"});
-    // form_div.append(input_car_type);
 
     createLabel("types:", form_div);
     const car_types = ["electric", "2 wheels", "sports"];
@@ -87,7 +79,6 @@ function createCar() {
 
         console.log("clicked");
         
-        //console.log(input_username.val());
         if (input_car_type.val() == "" || input_car_turbo.val() == "" || input_car_fog_lights.val() == "" || 
             input_car_heated_seats.val() == "" || input_car_autopilot.val() == "" || input_car_sports_exhaust.val() == "") {
             alert("Please fill in all the fields!");
