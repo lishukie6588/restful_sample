@@ -60,7 +60,7 @@ function createCar() {
     input_car_heated_seats.attr({type: "text", id: "car_heated_seats", name: "car_heated_seats", required : "true"});
     form_div.append(input_car_heated_seats);
 
-    createLabel("car autopilot:", form_div);
+    createLabel("autopilot:", form_div);
     let input_car_autopilot = createSelect(["yes", "no"]);
     input_car_autopilot.attr({type: "text", id: "car_autopilot", name: "car_autopilot",  required : "true"});
     form_div.append(input_car_autopilot);
