@@ -2,69 +2,10 @@ module.exports = function(){
     var express = require('express');
     var router = express.Router();
 
-    
-    router.get('/', function(req, res){
-
-
-        console.log("get request to /");
-        const context = {};
-        context.jsscripts = ["./helper.js", "login/front_login_on_load.js"];
-        res.render('login', context);
-    
-    });
-
-    router.get('/get_car', function(req, res){
-
-        console.log("get request to /get_car");
-
-        console.log(res);
-
-        const car_specs = {type : req.query.car_type, turbo: req.query.car_turbo, fog_lights: req.query.car_fog_lights, heated_seats: req.query.car_heated_seats, autopilot: req.query.car_autopilot, sports_exhaust: req.query.car_sports_exhaust};
-        const returned_car_json = JSON.stringify(car_specs);
-
-        // console.log(returned_car_json);
-
-        res.send(returned_car_json);
-
-    
-    });
-
-    /*
-    - validate that userid_x exists in the database & password_x matches password for userid_x stored in the database
-    - if validated:
-         - set req.session.userid to retrieved userid from database
-         - redirect to "/calendar"
-       - if not validated:
-         - redirect back to get "/login" route (above) (again)
-    */
-
-
-    // simplified post route for testing purpose
-    /*
-   router.post('/', function(req, res){
-    var body_params = [req.body.username, req.body.password];
-    console.log(body_params);
-
-    //var callbackCount = 0;
-    var context = {};
-    //context.jsscripts = ["calendar/front_calendar_day.js", "calendar/front_calendar.js", "calendar/front_calendar_on_load.js"];
-    
-    var mysql = req.app.get('mysql');
-    var sql_string = "SELECT * FROM Users";
-
-    mysql.pool.query(sql_string, function(error, results, fields){
-            context.users = results;
-            console.log(results);
-        
-    });
-    
-    res.render('login', context);
-});
-*/
-
-    
+   
+    // post to retrieve user data for calendar view
+    // ****TODO: copied from login.js, modify for user info retrieval
     router.post('/', function(req, res){
-        console.log("@ post login");
         var body_params = [req.body.username, req.body.password];
         //console.log(body_params);
 
@@ -73,15 +14,12 @@ module.exports = function(){
         //context.jsscripts = ["calendar/front_calendar_day.js", "calendar/front_calendar.js", "calendar/front_calendar_on_load.js"];
         
         var mysql = req.app.get('mysql');
-        
         validate(res, body_params, mysql, context, complete);
         function complete(){
             callbackCount++;
             if(callbackCount >= 1){
-                console.log("@ login post: context.users: ", context.users);
 
                 if (context.users.length == 0) {
-
                     console.log("invalid username &/ password");
                     //res.redirect("/login");
                     res.write("invalid");
@@ -103,17 +41,15 @@ module.exports = function(){
     
 
     function validate(res, params, mysql, context, complete){
-        console.log("@ post validate");
         var sql_string = "SELECT * FROM Users WHERE userid=? AND password=?";
         mysql.pool.query(sql_string, params, function(error, results, fields){
             if(error){
                 console.log("error");
                 res.write(JSON.stringify(error));
                 res.end();
-                return;
             }
             context.users = results;
-            console.log("@ post login: validate: mysql result = ", results);
+            //console.log(results);
             //console.log("reached compelte()");
             complete();
             
